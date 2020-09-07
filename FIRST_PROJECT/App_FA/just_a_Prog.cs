@@ -64,4 +64,21 @@ namespace ConsoleApplication1 // создает для проекта собст
 
 
 
+    class Class1
+    {
+        static void Main()
+        {
+            long b = 300;
+            int a = (int)b;
+            byte d = (byte)a;
+            Console.WriteLine(a + " " + d + " " + b); // типа d это 44 байта )
+        }
+    }
+
+
+
+##
+
+
+
 d
