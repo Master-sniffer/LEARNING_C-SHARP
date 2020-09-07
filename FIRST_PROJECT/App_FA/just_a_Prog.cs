@@ -19,3 +19,27 @@ namespace ConsoleApplication1 // создает для проекта собст
         }
     }
 }
+
+
+
+##
+
+
+
+    class Class1
+    {
+        static void Main()
+        {
+            object z = new object(); // Создает новую ссылку на объект
+            int i = new int(); // то же самое, что и int i = 0
+            Console.WriteLine(z + " " + i);
+        }
+    }
+
+
+
+##
+
+
+
+d
