@@ -1,11 +1,12 @@
-using System; 
-namespace ConsoleApplication1 
+using System;
+namespace ConsoleApplication1
 {
-    class Class1 
+    class Class1
     {
-        static void Main()
+        int b = 5;
+        void Y()
         {
-            Console.WriteLine("Слава Аллаху за этот прекрасный код");
+            Console.WriteLine(b);
         }
     }
 }
