@@ -1,0 +1,13 @@
+C:\Users\D.A.N\source\repos\App_FA\bin\Debug\netcoreapp3.1\App_FA.exe
+C:\Users\D.A.N\source\repos\App_FA\bin\Debug\netcoreapp3.1\App_FA.deps.json
+C:\Users\D.A.N\source\repos\App_FA\bin\Debug\netcoreapp3.1\App_FA.runtimeconfig.json
+C:\Users\D.A.N\source\repos\App_FA\bin\Debug\netcoreapp3.1\App_FA.runtimeconfig.dev.json
+C:\Users\D.A.N\source\repos\App_FA\bin\Debug\netcoreapp3.1\App_FA.dll
+C:\Users\D.A.N\source\repos\App_FA\bin\Debug\netcoreapp3.1\App_FA.pdb
+C:\Users\D.A.N\source\repos\App_FA\obj\Debug\netcoreapp3.1\App_FA.csprojAssemblyReference.cache
+C:\Users\D.A.N\source\repos\App_FA\obj\Debug\netcoreapp3.1\App_FA.AssemblyInfoInputs.cache
+C:\Users\D.A.N\source\repos\App_FA\obj\Debug\netcoreapp3.1\App_FA.AssemblyInfo.cs
+C:\Users\D.A.N\source\repos\App_FA\obj\Debug\netcoreapp3.1\App_FA.csproj.CoreCompileInputs.cache
+C:\Users\D.A.N\source\repos\App_FA\obj\Debug\netcoreapp3.1\App_FA.dll
+C:\Users\D.A.N\source\repos\App_FA\obj\Debug\netcoreapp3.1\App_FA.pdb
+C:\Users\D.A.N\source\repos\App_FA\obj\Debug\netcoreapp3.1\App_FA.genruntimeconfig.cache
