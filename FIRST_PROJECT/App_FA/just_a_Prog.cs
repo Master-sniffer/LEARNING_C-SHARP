@@ -232,4 +232,28 @@ namespace ConsoleApplication1 // создает для проекта собст
 
 
 
+    class Class1
+    {
+        static void Main()
+        { // Ввод - вывод в файлы
+            StreamWriter f = new StreamWriter("output.txt"); // объявили файловую переменнуб (f) и связали ее с НОВЫМ файлом, который мы назвали output
+            int i = 3;
+            double y = 4.12;
+            decimal d = 600m;
+            string s = "Vasiok";
+
+            f.WriteLine("i=" + i); // ВЕДЕТСЯ ЗАПИСЬ В ФАЙЛ
+            f.WriteLine("y={0} \nd={1}", y, d); // ВЕДЕТСЯ ЗАПИСЬ В ФАЙЛ
+            f.WriteLine("s= " + s); // ВЕДЕТСЯ ЗАПИСЬ В ФАЙЛ
+
+            f.Close(); // ЗАКРЫВАЕТСЯ ФАЙЛ
+        } // ФАЙЛ НАХОДИТСЯ В bin\debug и тд
+    }
+
+
+
+##
+
+
+
 d
