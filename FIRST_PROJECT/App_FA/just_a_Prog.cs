@@ -256,4 +256,26 @@ namespace ConsoleApplication1 // создает для проекта собст
 
 
 
-d
+    class Class1
+    {
+        static void Main()
+        { // МЕТОД КЛАССА MATH
+            Console.Write("Enter x: ");
+            string buf = Console.ReadLine();
+            double x = double.Parse(buf);
+            Console.WriteLine("Value sing: " + Math.Sin(x));
+
+            Console.Write("Enter y: ");
+            buf = Console.ReadLine();
+            double y = double.Parse(buf);
+            Console.WriteLine("Maximum : " + Math.Max(x, y));
+        } 
+    }
+
+
+
+##
+
+
+
+e
