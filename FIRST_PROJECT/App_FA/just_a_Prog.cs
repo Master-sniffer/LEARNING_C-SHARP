@@ -102,4 +102,24 @@ namespace ConsoleApplication1 // создает для проекта собст
 
 
 
-d
+    class Class1
+    {
+        static void Main()
+        {
+            byte a = 3, b = 9; // ВСЕ ЭТО
+            sbyte c = 9, d = -9; // ОПЕРАЦИИ СДВИГА
+            Console.WriteLine(a << 1); // ответ 6
+            Console.WriteLine(a << 2); // ответ 12
+            Console.WriteLine(b >> 1); // ответ 4
+            Console.WriteLine(c >> 1); // ответ 4
+            Console.WriteLine(d >> 1); // ответ -5
+        }
+    }
+
+
+
+##
+
+
+
+#
