@@ -305,4 +305,4 @@ namespace ConsoleApplication1 // создает для проекта собст
 
 
 
-d
+...
