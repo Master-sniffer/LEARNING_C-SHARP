@@ -81,4 +81,25 @@ namespace ConsoleApplication1 // создает для проекта собст
 
 
 
+    class Class1
+    {
+        static void Main()
+        {
+            int x = 11, y = 4;
+            float z = 4;
+            Console.WriteLine(z * y); // ответ 16
+            Console.WriteLine(z * 1e308); // ответ infinity
+            Console.WriteLine(x/y); // ответ 2
+            Console.WriteLine(x / z); // ответ 2.75
+            Console.WriteLine(x% y); // ответ 3
+            Console.WriteLine(1e-324/1e-324); // Ответ Nan 
+        }
+    }
+
+
+
+##
+
+
+
 d
