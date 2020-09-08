@@ -122,4 +122,20 @@ namespace ConsoleApplication1 // создает для проекта собст
 
 
 
-#
+    class Class1
+    {
+        static void Main()
+        {
+            Console.WriteLine(6 & 5) ; // ответ 4
+            Console.WriteLine(6 | 5); // ответ 7
+            Console.WriteLine(6 ^ 5); // ответ 3
+        }
+    }
+
+
+
+##
+
+
+
+d
