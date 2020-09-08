@@ -155,4 +155,20 @@ namespace ConsoleApplication1 // создает для проекта собст
 
 
 
+    class Class1
+    {
+        static void Main()
+        { // УСЛОВНАЯ ОПЕРАЦИЯ
+            int a = 11, b = 4;
+            int max = b > a ? b : a; /// СНАЧАЛА (после ? ) ИДЕТ РЕЗУЛЬТАТ FALSE (b) , ЕСЛИ УСЛОВИЕ (b>a) , ВЕРНО , ТО ИДЕТ РЕЗУЛЬТАТ TRUE (a)  ЭТО ПОХОЖЕ НА IF, НО ЭКОНОМНЕЕ
+            Console.WriteLine(max) ; // ответ 11 
+        }
+    }
+
+
+
+##
+
+
+
 d
