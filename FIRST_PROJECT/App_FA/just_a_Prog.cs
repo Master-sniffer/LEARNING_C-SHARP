@@ -191,4 +191,45 @@ namespace ConsoleApplication1 // создает для проекта собст
 
 
 
+    class Class1
+    {
+        static void Main()
+        { // ПРОСТЕЙШИЙ ВВОД С КЛАВЫ
+            Console.WriteLine("Введите строку");
+            string s = Console.ReadLine(); // считывание данных
+            Console.WriteLine("s= " + s);
+
+            Console.WriteLine("Введите символ");
+            char c = (char)Console.Read();
+            Console.ReadLine();
+            Console.WriteLine("c= " + c);
+            string buf; // строка буфер для ввода чисел
+            Console.WriteLine("Введите целое число");
+            buf = Console.ReadLine();
+            int i = Convert.ToInt32(buf);
+            Console.WriteLine(i);
+
+            Console.WriteLine("Введите вещественное число");
+            buf = Console.ReadLine();
+            double x = Convert.ToDouble(buf);
+            Console.WriteLine(x);
+
+            Console.WriteLine("Введтие Вещественное число");
+            buf = Console.ReadLine();
+            double y = double.Parse(buf);
+            Console.WriteLine(y);
+
+            Console.WriteLine("Введите вещественное число");
+            buf = Console.ReadLine();
+            decimal z = decimal.Parse(buf);
+            Console.WriteLine(z);
+        }
+    }
+
+
+
+##
+
+
+
 d
