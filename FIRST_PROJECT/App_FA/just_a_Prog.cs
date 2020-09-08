@@ -125,10 +125,27 @@ namespace ConsoleApplication1 // создает для проекта собст
     class Class1
     {
         static void Main()
-        {
+        { // Поразрядные логические операции
             Console.WriteLine(6 & 5) ; // ответ 4
             Console.WriteLine(6 | 5); // ответ 7
             Console.WriteLine(6 ^ 5); // ответ 3
+        }
+    }
+
+
+
+##
+
+
+
+    class Class1
+    {
+        static void Main()
+        { // ЛОГИЧЕСКИЕ ОПЕРАЦИИ
+            Console.WriteLine(true && true) ; // ответ true 
+            Console.WriteLine(true && false); // ответ false
+            Console.WriteLine(true || false); // ответ true
+            Console.WriteLine(true || true); // ответ true
         }
     }
 
