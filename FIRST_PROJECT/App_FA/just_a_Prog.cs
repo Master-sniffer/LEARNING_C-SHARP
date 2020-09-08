@@ -171,4 +171,24 @@ namespace ConsoleApplication1 // создает для проекта собст
 
 
 
+    class Class1
+    {
+        static void Main()
+        { // ПРОСТЕЙШИЙ ВВОД И ВЫВОД
+            int i = 3;
+            double y = 4.12;
+            decimal d = 600m;
+            string s = "Vasia";
+            Console.WriteLine("i = " + i) ; // 
+            Console.WriteLine("y = {0} \nd = {1}", y , d); // Тут идет присваивание переменных, которые идут после "цитаты"
+            Console.WriteLine("s = " + s); // 
+        }
+    }
+
+
+
+##
+
+
+
 d
