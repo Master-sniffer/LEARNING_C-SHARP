@@ -468,4 +468,25 @@ namespace ConsoleApplication1 // создает для проекта собст
 
 
 
+    class Class1
+    {
+        static void Main()
+        { // WHILE
+            char answer;
+            do
+            {
+                Console.WriteLine("BUT THE FUCKING ELEPHANT, MOM!!!!");
+                answer = (char)Console.Read();
+                Console.ReadLine();
+
+            } while (answer != 'y');
+        }
+    }
+
+
+
+##
+
+
+
 #
