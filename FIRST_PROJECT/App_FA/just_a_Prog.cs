@@ -334,4 +334,65 @@ namespace ConsoleApplication1 // создает для проекта собст
 
 
 
+    class Class1
+    {
+        static void Main()
+        { // SWITCH
+            double a, b, res;
+            Console.WriteLine("Enter the first operand");
+            a = double.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter the sign of the action !");
+            char op = (char)Console.Read();
+            Console.ReadLine();
+
+            Console.WriteLine("Enter the second operand");
+            b = double.Parse(Console.ReadLine());
+
+            bool ok = true;
+            switch (op)
+            {
+                case '+': {
+                        res = a + b;
+                        break;
+                          }
+                case '-':
+                    {
+                        res = a - b;
+                        break;
+                    }
+                case '*':
+                    {
+                        res = a * b;
+                        break;
+                    }
+                case '/':
+                    {
+                        res = a / b;
+                        break;
+                    }
+                default:
+                    {
+                        res = double.NaN;
+                        ok = false;
+                        break;
+                    }
+            }
+            if (ok)
+            {
+                Console.WriteLine("Result is " + res);
+            }
+            else
+            {
+                Console.WriteLine("Something went wrong :/");
+            }
+        }   
+    }
+
+
+
+##
+
+
+
 ...
