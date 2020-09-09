@@ -395,4 +395,35 @@ namespace ConsoleApplication1 // создает для проекта собст
 
 
 
-...
+    class Class1
+    {
+        static void Main()
+        { // WHILE
+            double Xn = -2, Xk = 12, dx = 2, t = 2, y;
+            Console.WriteLine("|    x   |   y   |"); // Заголовок таблицы
+
+            double x = Xn;
+            while (x <= Xn)
+            {
+                y = t;
+                if (x>=0 && x < 10)
+                {
+                    y = t * x;
+                }
+                if (x >= 10)
+                {
+                    y = 2 * t;
+                }
+                Console.WriteLine("|    {0,6}   |   {1,6}   |", x, y); // 6 - Шириеа для вывода значения
+                x += dx;
+            }
+        }   
+    }
+
+
+
+##
+
+
+
+.
