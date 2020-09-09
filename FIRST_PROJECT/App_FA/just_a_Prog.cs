@@ -471,7 +471,7 @@ namespace ConsoleApplication1 // создает для проекта собст
     class Class1
     {
         static void Main()
-        { // WHILE
+        { // DO
             char answer;
             do
             {
@@ -480,6 +480,33 @@ namespace ConsoleApplication1 // создает для проекта собст
                 Console.ReadLine();
 
             } while (answer != 'y');
+        }
+    }
+
+
+
+##
+
+
+
+    class Class1
+    {
+        static void Main()
+        { // DO
+            double x, left = 0, right = 1;
+            do
+            {
+                x = (left + right) / 2;
+                if ((Math.Cos(x) - x) * (Math.Cos(left) - left) < 0)
+                {
+                    right = x;
+                }
+                else
+                {
+                    left = x;
+                }
+            } while (Math.Abs(right - left) < 1e-4);
+            Console.WriteLine("SQRT equals " + x);
         }
     }
 
