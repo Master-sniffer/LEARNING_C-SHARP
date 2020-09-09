@@ -305,4 +305,33 @@ namespace ConsoleApplication1 // создает для проекта собст
 
 
 
+    class Class1
+    {
+        static void Main()
+        { // ОПЕРАТОРЫ ВЕТВЛЕНИЯ
+            Console.WriteLine("Enter x coordinate");
+            double x = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Enter y");
+            double y = Convert.ToDouble(Console.ReadLine());
+
+            int kol = 0;
+            if (x * x + y * y < 1)
+            {
+                kol = 2;
+            }
+            else if (x*x+y*y <4)
+            {
+                kol = 1;
+            }
+            Console.WriteLine("Result={0} points", kol);
+        }   
+    }
+
+
+
+##
+
+
+
 ...
