@@ -426,4 +426,46 @@ namespace ConsoleApplication1 // создает для проекта собст
 
 
 
-.
+    class Class1
+    {
+        static void Main()
+        { // WHILE
+            string buf;
+            while (true)
+            {
+                Console.WriteLine("1- point 1, 2 - point 2, 3- exit");
+                buf = Console.ReadLine();
+                switch (buf)
+                {
+                    case "1":
+                        {
+                            Console.WriteLine("Checking...\nYou are now on the point 1 !");
+                            break;
+                        }
+                    case "2":
+                        {
+                            Console.WriteLine("Checking...\nYou are now on the point 2 !");
+                            break;
+                        }
+                    case "3":
+                        {
+                            return;
+                        }
+                    default:
+                        {
+                            Console.WriteLine("Didnt'hit the button, ae");
+                            break;
+                        }
+                }
+            }
+           
+        }   
+    }
+
+
+
+##
+
+
+
+#
