@@ -519,7 +519,7 @@ namespace ConsoleApplication1 // создает для проекта собст
     class Class1
     {
         static void Main()
-        { // WHILE
+        { // FOR
             double Xn = -2, Xk = 12, dx = 2, t = 2, y;
             Console.WriteLine("|    x   |   y   |"); // Заголовок таблицы
             for (double x = Xn; x <= Xk; x += dx)
@@ -544,4 +544,35 @@ namespace ConsoleApplication1 // создает для проекта собст
 
 
 
-d
+    class Class1
+    {
+        static void Main()
+        { // BREAK
+            double e = 1e-6;
+            const int MaxIter = 500;
+            Console.WriteLine("Enter arguement");
+            double x = Convert.ToDouble(Console.ReadLine());
+
+            bool done = true;
+            double ch = x, y = ch;
+            for (int n=1; Math.Abs(ch)> e; n++)
+            {
+                ch *= -x * x / (2 * n * (2 * n + 1));
+                y += ch;
+                if (n > MaxIter)
+                {
+                    { done = false;break; }
+                }
+                if (done) Console.WriteLine("Sum is - " + y);
+                else Console.WriteLine("Row is not ROWing , heheheheheh\n");
+            }
+        }
+    }
+
+
+
+##
+
+
+
+#
