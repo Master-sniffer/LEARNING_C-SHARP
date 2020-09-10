@@ -693,4 +693,16 @@ namespace ConsoleApplication1 // создает для проекта собст
 
 
 
+    //МЕТОД
+    public double Gety() // это тип самый простейший метод
+    {
+        return y;
+    }
+
+
+
+##
+
+
+
 #
