@@ -747,4 +747,33 @@ namespace ConsoleApplication1 // создает для проекта собст
 
 
 
+    // ПЕРЕДАЧА ПАРАМЕТРОВ МЕТОДУ
+    class Class1
+    {
+        static int Max(int a, int b) //метод выбора МАКС значения
+        {
+            if (a > b) return a;
+            else return b;
+        }
+        static void Main()
+        {
+            int a = 2, b = 4;
+            int x = Max(a, b);
+            Console.WriteLine(x);
+
+            short t1 = 3, t2 = 4;
+            int y = Max(t1, t2); // ВЫЗОВ МЕТОДА MAX
+            Console.WriteLine(y); // ответ 4
+
+            int z = Max(a + t1, t1 / 2 * b); // ВЫЗОВ МЕТОДА MAX
+            Console.WriteLine(z); // ответ 5
+        }
+    }
+
+
+
+##
+
+
+
 #
