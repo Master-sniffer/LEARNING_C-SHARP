@@ -625,7 +625,7 @@ namespace ConsoleApplication1 // создает для проекта собст
             {
                 Console.WriteLine("Exception in F " + e.Message);
                 e = new Exception("f");
-                throw; // Повторная генерация исключения
+                throw e; // Повторная генерация исключения
             }
         }   static void G()
         {
@@ -640,6 +640,24 @@ namespace ConsoleApplication1 // создает для проекта собст
             catch (Exception e)
             {
                 Console.WriteLine("EXCEPTION NOW IN MAIN: " + e.Message);
+            }
+        }
+    }
+
+
+
+##
+
+
+
+    class Class1
+    {
+        static void Main()
+        { // checked unchecked
+            a = checked(b + c); //Для выражения - проверка включена
+            unchecked // Для блока операторов - проверка выключена
+            {
+                a = b + c;
             }
         }
     }
