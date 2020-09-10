@@ -575,4 +575,42 @@ namespace ConsoleApplication1 // создает для проекта собст
 
 
 
-...
+    class Class1
+    {
+        static void Main()
+        { // TRY
+            string buf;
+            double u, i, r;
+            try
+            {
+                Console.WriteLine("Enter conflict");
+                u = double.Parse(Console.ReadLine());
+
+                Console.WriteLine("Enter the resistance");
+                r = double.Parse(Console.ReadLine());
+
+                i = u / r;
+                Console.WriteLine("ENERGY POWER IS " + i);
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("UNCORRECT FORMAT, MAN!");
+            }
+            catch
+            {
+                Console.WriteLine("UMMMM< SOMETHING WENT WRONG");
+            }
+            finally
+            {
+                Console.WriteLine("BYE");
+            }
+        }
+    }
+
+
+
+##
+
+
+
+d
