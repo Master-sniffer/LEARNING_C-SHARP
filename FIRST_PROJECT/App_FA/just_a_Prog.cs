@@ -668,4 +668,29 @@ namespace ConsoleApplication1 // создает для проекта собст
 
 
 
+    // КЛАСС И ОБРАЩЕНИЯ К НЕМУ
+    class Demo
+        {
+        // ШОБЫ У ВСЕХ ВСЕ БЫЛО ВИДНО , НУЖНО , ЧТОБЫ ПЕРЕД ПЕРЕМЕННОЙ БЫЛА public ( перевод: публично) , ТОГДА ВСЕ ТИПА ВСЕ БУДУТ ВИДЕТЬ
+    public int a = 1; // ПОЛЯ ДАННЫХ
+    public const double c = 1.66; // КОНСТАНТА
+    public static string s = "Demo"; // СТАТИЧЕСКОЕ ПОЛЯ КЛАССА
+    double y; // ПОЛЕ ЗАКРЫТОЕ, ПОЭТОМУ ДОСТУПА К НЕМУ - НЕМА )))) 
+        }
+    class Class1
+    { static void Main()
+        {
+            Demo x = new Demo(); // СОЗДАНИЕ НВОГО ЭКЗЕМПЛЯРА КЛАССА DEMO
+            Console.WriteLine(x.a); // ОБРАЗЕНИЕ К ПОЛЮ КЛАССА ( ВЫВОД а ИЗ ДРУГОГО КЛАССА)
+            Console.WriteLine(Demo.c); // ОБРАЩЕНИЕ К КОНСТАНТЕ
+            Console.WriteLine(Demo.s); // ОБРАЩЕНИЕ К СТАТИЧЕСКОМУ ПОЛЮ
+        } 
+    }
+
+
+
+##
+
+
+
 #
