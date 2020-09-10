@@ -613,4 +613,41 @@ namespace ConsoleApplication1 // создает для проекта собст
 
 
 
-d
+    class Class1
+    {
+        static void F()
+        { // throw
+            try
+            {
+                G();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Exception in F " + e.Message);
+                e = new Exception("f");
+                throw; // Повторная генерация исключения
+            }
+        }   static void G()
+        {
+            throw new Exception("G"); //Моделирование исключительной ситуации
+        }
+        static void Main()
+        {
+            try
+            {
+                F();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("EXCEPTION NOW IN MAIN: " + e.Message);
+            }
+        }
+    }
+
+
+
+##
+
+
+
+#
