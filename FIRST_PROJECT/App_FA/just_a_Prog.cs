@@ -705,4 +705,46 @@ namespace ConsoleApplication1 // создает для проекта собст
 
 
 
+    class Demo
+    {
+        public int a = 1;
+        public const double c = 1.66;
+        static string s = "Demo";
+        double y;
+
+        public double Gety()
+        {
+            return y;
+        }
+
+        public void Sety(double y_) // ВЫЗОВ ИДЕТ ЧЕРЕЗ ЭКХЕМПЛЯР (x) - ТАК КАК ТУТ НАПИСАНО void
+        {
+            y = y_;
+        }
+
+        public static string Gets() // ВЫЗОВ ИДЕТ ЧЕРЕЗ КЛАСС (Demo) - ТАК КАК ТУТ НАПИСАНО static
+        {
+            return s;
+        }
+
+    }
+
+    class Class1
+    {
+        static void Main()
+        {
+            Demo x = new Demo();
+            x.Sety(0.12);
+            Console.WriteLine(x.Gety());
+            Console.WriteLine(Demo.Gets());
+            Console.WriteLine(Demo.Gets());
+        }
+    }
+
+
+
+##
+
+
+
 #
