@@ -776,10 +776,26 @@ namespace ConsoleApplication1 // создает для проекта собст
 
 
 
-    class Class1
-    {
+    class Class1 // REF
+    { 
         static void P ( int a , ref int b)
         {
             a = 44; b = 33;
+            Console.WriteLine("Внутри метода {0} {1}", a, b);
+        }
+        static void Main()
+        {
+            int a = 2, b = 4;
+            Console.WriteLine("До вызова {0} {1}", a, b);
+            P(a, ref b);
+            Console.WriteLine("После вызова {0} {1}", a ,b);
         }
     }
+   
+
+
+##
+
+
+
+#
