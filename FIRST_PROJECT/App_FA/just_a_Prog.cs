@@ -839,4 +839,38 @@ namespace ConsoleApplication1 // создает для проекта собст
 
 
 
+    class Demo // КОНСТРУКТОРЫ (инициализация объекта)
+    {
+        public Demo (int a, double y) // КОНСТРУКТОР С ПАРАМЕТРАМИ
+        {
+            this.a = a;
+            this.y = y;
+            this.y -= 1;
+        }
+
+        public double Gety() // метод получения 
+        {
+            return y;
+        }
+
+        int a;
+        double y;
+    }
+    class Class1
+    {
+        static void Main()
+        {
+            Demo a = new Demo(300, 0.002);
+            Console.WriteLine(a.Gety());
+            Demo b = new Demo(1, 5.71);
+            Console.WriteLine(b.Gety());
+        }
+    }
+
+
+
+##
+
+
+
 #
