@@ -820,4 +820,23 @@ namespace ConsoleApplication1 // создает для проекта собст
 
 
 
+    class Demo // THIS
+    {
+        double y;
+        public Demo T() // метод T возвращает ссылку на экземпляр
+        {
+            return this;
+        }
+        public void Sety(double y)
+        {
+            this.y = y; // Полю у присваевается значение параметра у
+        }
+    }
+
+
+
+##
+
+
+
 #
