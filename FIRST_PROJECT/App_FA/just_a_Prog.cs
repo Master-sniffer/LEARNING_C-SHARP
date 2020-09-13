@@ -776,4 +776,10 @@ namespace ConsoleApplication1 // создает для проекта собст
 
 
 
-#
+    class Class1
+    {
+        static void P ( int a , ref int b)
+        {
+            a = 44; b = 33;
+        }
+    }
