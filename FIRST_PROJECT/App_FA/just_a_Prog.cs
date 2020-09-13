@@ -873,4 +873,77 @@ namespace ConsoleApplication1 // создает для проекта собст
 
 
 
+    class Demo // КОНСТРУКТОРЫ (инициализация объекта)
+    {
+        public Demo ( int a) // КОНСТРУКТОР 1
+        {
+            this.a = a;
+            this.y = 0.02;
+
+        }
+        public Demo (double y) // КОНСТРУКТОР 2
+        {
+            this.a = 1;
+            this.y = y;
+        }
+
+        public double Gety() // метод получения 
+        {
+            return y;
+        }
+
+        int a;
+        double y;
+    }
+    class Class1
+    {
+        static void Main()
+        {
+            Demo a = new Demo(300); // ВЫЗОВ КОНСТРУКТОРА 1
+            Demo b = new Demo(5.71); // ВЫЗОВ КОНСТРУКТОРА 2
+            Console.WriteLine(a.Gety());
+        }
+    }
+
+
+
+##
+
+
+
+    class Demo // КОНСТРУКТОРЫ (инициализация объекта)
+    {
+        public Demo ( int a) // КОНСТРУКТОР 1
+        {
+            this.a = a;
+
+        }
+        public Demo (int a,double y) : this(a) // ВЫЗОВ КОНСТРУКТОРА 1      this - инициализатор. Это код, который выполняется до начала тела конструктора
+        {
+            this.y = y;
+        }
+
+        public double Gety() // метод получения 
+        {
+            return y;
+        }
+
+        int a;
+        double y;
+    }
+    class Class1
+    {
+        static void Main()
+        {
+            Demo a = new Demo(300); // ВЫЗОВ КОНСТРУКТОРА 1
+            Console.WriteLine(a.Gety());
+        }
+    }
+
+
+
+##
+
+
+
 #
