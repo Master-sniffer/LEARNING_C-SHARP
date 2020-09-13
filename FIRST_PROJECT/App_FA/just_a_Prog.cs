@@ -946,4 +946,18 @@ namespace ConsoleApplication1 // создает для проекта собст
 
 
 
+    class Demo // КОНСТРУКТОРЫ (инициализация объекта)
+    {
+        public Demo(int a): base() // КОНСТРУКТОР 1
+        {
+            this.a = a;
+        }
+    }
+
+
+
+##
+
+
+
 #
