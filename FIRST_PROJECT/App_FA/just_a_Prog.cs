@@ -960,4 +960,97 @@ namespace ConsoleApplication1 // создает для проекта собст
 
 
 
+    class D // КЛАСС СО СТАТИЧЕСКИМ И ЗАКРЫТЫММ КОНСТРУКТОРОМИ
+    {
+        private D() { } // закрытый конструктор
+        static D() // статический конструктор
+        {
+            a = 200;
+        }
+        static int a;
+        static double b = 0.002;
+        public static void Print()
+        {
+            Console.WriteLine("a= " + a);
+            Console.WriteLine("b= " + b);
+        }
+
+    }
+    class Class2
+    {
+        static void Main()
+        {
+            D.Print();
+            D d = new D();  // выдаст ошибка, так как экземпляр создать нереал, так как у нас закрытый конструктор
+        }
+    }
+
+
+
+##
+
+
+
+            // ЩА БУДЕТ ПРИМЕР РАБОТЫ С КЛАССАМИ
+    class Monster
+    {
+        public Monster()
+        {
+            this.name = "Nomad";
+            this.health = 100;
+            this.ammo = 50;
+        }
+        public Monster (string name): this()
+        {
+            this.name = name;
+        }
+        public Monster (int health, int ammo, string name)
+        {
+            this.name = name;
+            this.health = health;
+            this.ammo = ammo;
+        }
+
+        public string GetName()
+        {
+            return name;
+        }
+
+        public int GetHealth()
+        {
+            return health;
+        }
+
+        public int GetAmmo()
+        {
+            return ammo;
+        }
+
+        public void Passport()
+        {
+            Console.WriteLine("Monster {0} \thealth = {1} and ammo is {2} ", name, health, ammo);
+        }
+        string name; // ИДЕТ ЗАКРЫТИЕ ПОЛЯ
+        int health, ammo;
+    }
+
+    class Class1
+    {
+        static void Main()
+        {
+            Monster x = new Monster(); // ВЫЗОВ КОНСТРУКТОРА 1
+            x.Passport();
+            Monster Vasia = new Monster("VasiOchka"); // ВЫЗОВ КОНСТРУКТОРА 2
+            Vasia.Passport();
+            Monster Masha = new Monster(200, 200, "Masha"); // ВЫЗОВ КОНСТРУКТОРА 3
+            Masha.Passport();
+        }
+    }
+
+
+
+##
+
+
+
 #
