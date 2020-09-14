@@ -1085,4 +1085,27 @@ namespace ConsoleApplication1 // создает для проекта собст
 
 
 
+    // КАК МОЖНО ЕЩЕ ИСПОЛЬЗОВАТЬ GET И SET
+    class A
+    {
+        private static ComplexObject x; // закрытое поле
+        private static ComplexObject X
+        {
+            get
+            {
+                if (x == nul)
+                {
+                    x = new ComplexSubject(); // Создание объекта при 1-ом обращении
+                }
+                return x;
+            }
+        }
+    }
+
+
+
+##
+
+
+
 #
