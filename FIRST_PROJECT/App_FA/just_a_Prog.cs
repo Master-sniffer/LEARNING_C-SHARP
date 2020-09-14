@@ -1053,4 +1053,36 @@ namespace ConsoleApplication1 // создает для проекта собст
 
 
 
+    // СВОЙСТВА
+    public class Button : Control // BUTTON ЯВЛЯЕТСЯ ПРОИЗВОДНЫМ ОТ КЛАССА Control
+    {
+        private string caption; // Закрытое поле, с которым связано свойство
+        public string Caption // свойство
+        {
+            get // СПОСОБ ПОЛУЧЕНИЯ СВОЙСТВА
+            {
+                return caption;
+            }
+            set // СПОСОБ УСТАНОВКИ СВОЙСТВА
+            {
+                if (caption != value)
+                {
+                    caption = value;
+                }
+
+                Button ok = new Button();
+                ok.Caption = "OK";
+                string s = ok.Caption;
+            }
+
+        }
+
+    }
+
+
+
+##
+
+
+
 #
