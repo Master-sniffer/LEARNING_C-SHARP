@@ -1370,4 +1370,46 @@ int [] e = new int[4] {61,2,5,-9}; // избыточное описание
 
 
 
+using System;
+using System.IO;
+namespace ConsoleApplication1
+{
+    //FOREACH
+    class Class1
+    {
+        static void Main()
+        {
+            int[] a = { 3, 12, 5, -9, 8, -4 };
+
+            Console.WriteLine("Исходный массив");
+            foreach (int elem in a)
+                Console.WriteLine("\t" + elem);
+            Console.WriteLine();
+
+            long sum = 0;
+            int num = 0;
+            foreach (int elem in a)
+                if (elem < 0)
+                {
+                    sum += elem;
+                    ++num;
+                }
+            Console.WriteLine("sum = " + sum);
+            Console.WriteLine("num = " + num);
+
+            int max= a[0]; // максимальный элемент
+            foreach (int elem in a)
+                if (elem > max) max = elem;
+
+            Console.WriteLine("max = " + max);
+        }
+    }
+}
+
+
+
+##
+
+
+
 #
