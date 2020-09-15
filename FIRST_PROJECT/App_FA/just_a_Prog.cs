@@ -1572,4 +1572,40 @@ namespace ConsoleApplication1
 
 
 
+    //RANDOM
+    class Class1
+    {
+        static void Main()
+        {
+            // ВСЕГДА НУЖНО СОЗДАВАТЬ ЭКЗЕМПЛЯР КЛАССА
+            Random a = new Random();  // ИСПОЛЬЗУЕТ ЗНАЧЕНИЕ ГЕНЕРАТОРА , КОТОРОЕ ОСНОВАНО НА НЫНЕШНЕМ ВРЕМЕНИ
+            Random b = new Random(1); // ИСПОЛЬЗУЕТ ПАРАМЕТР, ЧТО-ТО ТИПА SEED В МАЙНКРАФТЕ
+            const int n = 10;
+
+            Console.WriteLine("\n Диапазон [0,1]:");
+            for (int i = 0; i< n; i++)
+            {
+                Console.Write("{0,6:0.##}", a.NextDouble());
+            }
+            Console.WriteLine("\n Диапазон [0,1000]: ");
+            for (int i = 0; i < n; i++)
+                Console.Write("   " + b.Next(1000));
+
+            Console.WriteLine("\n Диапазон [-10, 10]: ");
+            for (int i = 0; i < n; i++)
+                Console.Write("    " + a.Next(-10, 10));
+
+            Console.WriteLine("\n Массив [0,255]: ");
+            byte[] mas = new byte[n];
+            a.NextBytes(mas);
+            for (int i = 0; i < n; ++i) Console.Write(" " + mas[i]);
+        }
+    }
+
+
+
+##
+
+
+
 #
