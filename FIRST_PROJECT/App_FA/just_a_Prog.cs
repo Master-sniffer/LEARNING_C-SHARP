@@ -1208,4 +1208,41 @@ int [] e = new int[4] {61,2,5,-9}; // избыточное описание
 
 
 
+    class Class1
+    {
+        static void Main()
+        {
+            const int n = 6;
+            int[] a = new int [n] { 3, 12, 5, -9, 8, -4 };
+
+            Console.WriteLine("ИСХОДНЫЙ МАССИВ");
+            for (int i = 0; i <n; ++i)
+            {
+                Console.WriteLine("\t" + a[i]);
+            }
+            Console.WriteLine();
+            long sum = 0;
+            int num = 0;
+            for (int i = 0; i<n; ++i) 
+                if (a[i] < 0)
+                {
+                    sum += a[i];
+                    ++num;
+                }
+            Console.WriteLine("SUM OF THE NEGATIVE NUMBERS IS = " + sum);
+            Console.WriteLine("NUMBER OF THE NEGATIVES = " + num);
+
+            int max = a[0];
+            for (int i = 1; i < n; ++i)
+                if (a[i] > max) max = a[i];
+            Console.WriteLine("MAX ELEMENT IS " + max);
+        }
+    }
+
+
+
+##
+
+
+
 #
