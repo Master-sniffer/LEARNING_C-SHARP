@@ -1344,4 +1344,30 @@ int [] e = new int[4] {61,2,5,-9}; // избыточное описание
 
 
 
+    class Class1
+    {
+        static void Main()
+        {
+            int[][] a = new int[3][];
+            a[0] = new int[5] { 24, 50, 18, 3, 16 };
+            a[1] = new int[3] { 7, 9, -1 };
+            a[2] = new int[4] { 6, 15, 3, 1 };
+
+            Console.WriteLine("Исходный массив ");
+            for (int i = 0; i < a.Length; i++)
+            {
+                for (int j = 0; j < a[i].Length; j++)
+                    Console.WriteLine("\t" + a[i][j]);
+                Console.WriteLine();
+            }
+            Console.WriteLine(Array.IndexOf(a[0], 18));
+        }
+    }
+
+
+
+##
+
+
+
 #
