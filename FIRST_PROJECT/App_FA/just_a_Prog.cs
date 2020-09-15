@@ -1316,4 +1316,32 @@ int [] e = new int[4] {61,2,5,-9}; // избыточное описание
 
 
 
+    class Class1
+    {
+        static void Main()
+        {
+            int[] a = { 24, 50, 18, 3, 16, -7, 9, -1 };
+
+            PrintArray("Исходный массив", a);
+            Console.WriteLine(Array.IndexOf(a, 18)); // ПОИСК ПЕРВОГО ВХОЖДЕНИЯ ЭЛЕМЕНТА В МАССИВ
+
+            Array.Sort(a); // УПОРЯДОЧИВАНИЕ ЭЛЕМЕНТОВ ОДНОМЕРНОГО МАССИВА
+            PrintArray("Упорядочный массив ", a);
+            Console.WriteLine(Array.BinarySearch(a, 18)); // ДВОИЧНЫЙ ПОИСК В ОТСОРТИРОВАННОМ МАССИВЕ
+        }
+        public static void PrintArray (string header, int[] a)
+        {
+            Console.WriteLine(header);
+            for (int i = 0; i < a.Length; i++)
+                Console.WriteLine("\t" + a[i]);
+            Console.WriteLine();
+        }
+    }
+
+
+
+##
+
+
+
 #
