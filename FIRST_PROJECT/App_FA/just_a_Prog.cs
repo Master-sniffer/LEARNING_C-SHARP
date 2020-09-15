@@ -1108,4 +1108,83 @@ namespace ConsoleApplication1 // создает для проекта собст
 
 
 
+    class Monster
+    {
+        public Monster()
+        {
+            this.name = "Nomad";
+            this.health = 100;
+            this.ammo = 50;
+        }
+        public Monster(string name) : this()
+        {
+            this.name = name;
+        }
+        public Monster(int health, int ammo, string name)
+        {
+            this.name = name;
+            this.health = health;
+            this.ammo = ammo;
+        }
+
+        public int Health // свойство связано с полем health
+        {
+            get
+            {
+                return health;
+            }
+            set
+            {
+                if (value > 0) health = value;
+                else health = 0;
+            }
+        }
+
+        public int Ammo // свойство связано с ammo
+        {
+            get
+            {
+                return ammo;
+            }
+            set
+            {
+                if (value > 2000) ammo = value;
+                else ammo = 0;
+            }
+        }
+
+        public string Name // свойство связано с name
+        {
+            get
+            {
+                return name;
+            }
+        }
+
+        public void Passport()
+        {
+            Console.WriteLine("Monster {0} \thealth = {1} and ammo is {2} ", name, health, ammo);
+        }
+        string name; // ИДЕТ ЗАКРЫТИЕ ПОЛЯ
+        int health, ammo;
+    }
+
+    class Class1
+    {
+        static void Main()
+        {
+            Monster Masha = new Monster(200, 200, "Masha");
+            Masha.Passport();
+            --Masha.Health; // ЮЗАЕМ СВОЙСТВА
+            Masha.Ammo = +100;
+            Masha.Passport();
+        }
+    }
+
+
+
+##
+
+
+
 #
