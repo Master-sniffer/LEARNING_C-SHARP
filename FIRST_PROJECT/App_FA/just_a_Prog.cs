@@ -1412,4 +1412,43 @@ namespace ConsoleApplication1
 
 
 
+    // ИСПОЛЬЗОВАНИЕ МЕТОДОВ System.Char
+    class Class1
+    {
+        static void Main()
+        {
+            try
+            {
+                char b = 'B', c = '\x63', d = '\u0032';
+                Console.WriteLine("{0} {1} {2}", b, c, d);
+                Console.WriteLine("{0} {1} {2}",
+                    char.ToLower(b), char.ToUpper(c), char.GetNumericValue(d));
+                char a;
+                do
+                {
+                    Console.WriteLine("Enter symbol");
+                    a = char.Parse(Console.ReadLine());
+                    Console.WriteLine("Enter symbol {0} and his code is {1}", a, (int)a);
+                    if (char.IsLetter(a)) Console.WriteLine("Letter");
+                    if (char.IsUpper(a)) Console.WriteLine("Upper reg");
+                    if (char.IsLower(a)) Console.WriteLine("Low reg");
+                    if (char.IsControl(a)) Console.WriteLine("Controlled");
+                    if (char.IsNumber(a)) Console.WriteLine("Number");
+                    if (char.IsPunctuation(a)) Console.WriteLine("Devider");
+                } while (a != 'q');
+            }
+            catch
+            {
+                Console.WriteLine("THERE IS A FUCKING EXCEPTION RIGHT IN THE CODE !");
+                return;
+            }
+        }
+    }
+
+
+
+##
+
+
+
 #
