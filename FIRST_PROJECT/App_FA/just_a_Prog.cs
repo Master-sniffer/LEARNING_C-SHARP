@@ -1451,4 +1451,38 @@ namespace ConsoleApplication1
 
 
 
+    // РАБОТА С МАССИВАМИ СПИСКОВ
+
+    class Class1
+    {
+        static void Main()
+        {
+            char[] a = { 'm', 'a', 's', 's', 'i', 'v' };
+            char[] b = "а роза упала на лапу хера".ToCharArray();
+
+            PrintArray("Исходный массив", a);
+
+            int pos = Array.IndexOf(a, 'm');
+            a[pos] = 'M';
+            PrintArray("Changed massive a", a);
+
+            PrintArray("Changed massive b ", b);
+            Array.Reverse(b);
+            PrintArray("Changed massive ", b);
+        }
+
+        public static void PrintArray(string header, Array a)
+        {
+            Console.WriteLine(header);
+            foreach (object x in a) Console.Write(x);
+            Console.WriteLine("\n");
+        }
+    }
+
+
+
+##
+
+
+
 #
