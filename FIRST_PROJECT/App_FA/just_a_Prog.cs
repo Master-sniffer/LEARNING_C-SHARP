@@ -1261,4 +1261,44 @@ int [] e = new int[4] {61,2,5,-9}; // избыточное описание
 
 
 
+    class Class1
+    {
+        static void Main()
+        {
+            const int m = 3, n = 4;
+            int[,] a = new int[m, n]
+            {
+                {2,-2,8,9 },
+                {-4,-5,6,-2},
+                {7,0,1,1 }
+            };
+            Console.WriteLine("Исходный массив");
+            for (int i=0; i < m; ++i)
+            {
+                for (int j = 0; j < n; ++j)
+                    Console.WriteLine("\t" + a[i, j]);
+                Console.WriteLine();
+            }
+            double sum = 0;
+            int nPosEl;
+            for (int i = 0; i < m; ++i)
+            {
+                nPosEl = 0;
+                for (int j = 0; j < n; ++j)
+                {
+                    sum += a[i, j];
+                    if (a[i, j] > 0) ++nPosEl;
+                }
+                Console.WriteLine("В строке {0} {1} положит x элементов", i, nPosEl);
+            }
+            Console.WriteLine("Среднее арфимет всех элементов " + sum / m / n);
+        }
+    }
+
+
+
+##
+
+
+
 #
