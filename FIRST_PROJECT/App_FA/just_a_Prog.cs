@@ -1457,8 +1457,8 @@ namespace ConsoleApplication1
     {
         static void Main()
         {
-            char[] a = { 'm', 'a', 's', 's', 'i', 'v' };
-            char[] b = "а роза упала на лапу хера".ToCharArray();
+            char[] a = { 'm', 'a', 's', 's', 'i', 'v' }; // ЗАДАЛИ ЭЛЕМЕНТЫ МАССИВА
+            char[] b = "а роза упала на лапу хера".ToCharArray(); // ПЕРЕВЕЛИ ПРЕДЛОЖЕНИЕ В НУЖНЫЙ НАМ ФОРМАТ
 
             PrintArray("Исходный массив", a);
 
@@ -1476,6 +1476,54 @@ namespace ConsoleApplication1
             Console.WriteLine(header);
             foreach (object x in a) Console.Write(x);
             Console.WriteLine("\n");
+        }
+    }
+
+
+
+##
+
+
+
+    // СОЗДАНИЕ СТРОК ТИПА string
+    class Class1
+    {
+        string s; // ИНИЦИАЛИЗАЦИЯ ОТЛОЖЕНА
+        string u = new string(' ', 20); // КОНСТРУКТОР СОЗДАЕТ СТРОКУ ИЗ 20 ПРОБЕЛОВ
+        string t = "qqq"; //  ИНИЦИАЛИЗАЦИЯ СТРОКОВЫМ ЛИТЕРАЛОМ
+        char[] a = { '0', '0', '0' }; // МАССИВ ДЛЯ ИНИЦИАЛИЗАЦИИ СТРОКИ
+        string v = new string(a); // СОЗДАНИЕ ИЗ МАССИВА СИМВОЛОМ 
+    }
+
+
+
+##
+
+
+
+    // РАБОТА СО СТРОКАМИ ТИПА STRING
+    class Class1
+    {
+        static void Main()
+        {
+            string s = "Прекрасная королева Изольда";
+            Console.WriteLine(s);
+            string sub = s.Substring(3).Remove(12, 2);
+            Console.WriteLine(sub);
+
+            string[] mas = s.Split(' ');
+            string joined = string.Join("! ", mas);
+            Console.WriteLine(joined);
+
+            Console.WriteLine("Enter the string");
+            string x = Console.ReadLine();
+            Console.WriteLine("You've entered the string " + x);
+
+            double a = 12.234;
+            int b = 29;
+            Console.WriteLine("a = {0,6:C} b = {1,2:X}", a, b);
+            Console.WriteLine(" a = {0,6:0.##} b={1,5:0.# ' rub. '}", a, b);
+            Console.WriteLine(" a = {0:F3} b= {1:D3}", a, b);
         }
     }
 
