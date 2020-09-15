@@ -1533,4 +1533,43 @@ namespace ConsoleApplication1
 
 
 
+    class Class1
+    {
+        StringBuilder a = new StringBuilder(); // Создается пустая строка размера - 16 байт
+        StringBuilder b = new StringBuilder("qwerty"); //  создание 
+        StringBuilder c = new StringBuilder(100); // выделение памяти 
+        StringBuilder d = new StringBuilder("qweert", 100); // создание и выделение памяти
+        StringBuilder e = new StringBuilder("qwerty", 1, 3, 100); // объект инициализируестя подстрокой длиной 3 символа, начиная с 1 (подстрока "wer) 
+    }
+
+
+
+##
+
+
+
+    // РАБОТА СО СТРОКАМИ ТИПА STRINGBUILDER
+    class Class1
+    {
+        static void Main()
+        {
+            Console.WriteLine("Enter the salary: ");
+            double salary = double.Parse(Console.ReadLine());
+
+            StringBuilder a = new StringBuilder();
+            a.Append("Salary");
+            a.AppendFormat("{0, 6:C} - per year {1,6:C}", salary, salary * 12);
+            Console.WriteLine(a);
+
+            a.Replace("p", "thous");
+            Console.WriteLine("It would be better if " + a);
+        }
+    }
+
+
+
+##
+
+
+
 #
