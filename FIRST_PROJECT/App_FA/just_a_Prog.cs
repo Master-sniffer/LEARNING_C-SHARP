@@ -1608,4 +1608,44 @@ namespace ConsoleApplication1
 
 
 
+    // Метод с переменным числом параметров
+    class Class1
+    {
+        public static double Average(params int[] a)
+        {
+            if (a.Length == 0)
+                throw new Exception("Not enough of arguements in the esample");
+
+            double av = 0;
+            foreach (int elem in a) av += elem;
+            return av / a.Length;
+        }
+
+        static void Main()
+        {
+            try
+            {
+                int[] a = { 10, 20, 30 };
+                Console.WriteLine(Average(a));
+                int[] b = { -11, -4, 12, 14, 32, -1, 28 };
+                Console.WriteLine(Average(b));
+                short z = 1, e = 13;
+                byte v = 107;
+                Console.WriteLine(Average(z, e, v));
+                Console.WriteLine(Average());
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return;
+            }
+        }
+    }
+
+
+
+##
+
+
+
 #
