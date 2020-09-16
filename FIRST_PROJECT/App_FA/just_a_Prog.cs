@@ -1648,4 +1648,56 @@ namespace ConsoleApplication1
 
 
 
+    // ИСПОЛЬЗОВАНИЕ ИНДЕКСАТОРОВ
+    class SafeArray
+    {
+        public SafeArray(int size)
+        {
+            a = new int[size];
+            length = size;
+        }
+        public int Length
+        {
+            get { return length; }
+        }
+
+        public int this [int i]
+        {
+            get
+            {
+                if (i >= 0 && i < length) return a[i];
+                else { error = true; return 0; }
+            }
+            set
+            {
+                if (i >= 0 && i < length && value >= 0 && value <= 100) a[i] = value;
+                else error = true;
+            }
+        }
+        public bool error = false; // открытый признак ошибки
+        int[] a; // закрытый массив
+        int length; // закрытая размерность
+    }
+
+    class Class1
+    {
+        static void Main()
+        {
+            int n = 100;
+            SafeArray sa = new SafeArray(n);
+            for (int i =0; i < n; i++)
+            {
+                sa[i] = i * 2;
+                Console.WriteLine(sa[i]);
+            }
+            if (sa.error) Console.WriteLine("There were mistakes");
+        }
+    }
+
+
+
+##
+
+
+
 #
