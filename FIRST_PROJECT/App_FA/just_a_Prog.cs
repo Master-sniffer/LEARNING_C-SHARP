@@ -1700,4 +1700,40 @@ namespace ConsoleApplication1
 
 
 
+    // ИНДЕКСАТОР МАССИВА
+    class Pow2
+    {
+        public ulong this[int i]
+        {
+            get
+            {
+                if (i >= 0)
+                {
+                    ulong res = 1;
+                    for (int k = 0; k < 1; k++) //
+                        unchecked { res *= 2; }
+                    return res;
+                }
+                else return 0;
+            }
+        }
+    }
+
+    class Class1
+    {
+        static void Main()
+        {
+            int n = 13;
+            Pow2 pow2 = new Pow2();
+            for (int i = 0; i < n; i++)
+                Console.WriteLine("{0}\t{1}", i, pow2[i]);
+        }
+    }
+
+
+
+##
+
+
+
 #
