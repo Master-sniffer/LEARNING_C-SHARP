@@ -1816,4 +1816,111 @@ namespace ConsoleApplication1
 
 
 
+    class SafeArray
+    {
+        public SafeArray(int size)
+        {
+            a = new int[size];
+            length = size;
+        }
+
+        public SafeArray(params int[] arr)
+        {
+            length = arr.Length;
+            arr = new int[length];
+            for (int i = 0; i < length; ++i ) a[i] = arr[i];
+        }
+
+        public static SafeArray operator + (SafeArray x, SafeArray y) // +
+        {
+            int len = x.length < y.length ? x.length : y.length;
+            SafeArray temp = new SafeArray(len);
+
+            for (int i = 0; i < len; ++i) temp[i] = x[i] + y[i];
+            return temp;
+        }
+
+        public static SafeArray operator + (SafeArray x, int y)
+        {
+            SafeArray temp = new SafeArray(x.length);
+            for (int i = 0; i < x.length; ++i) temp[i] = x[i] + y;
+            return temp;
+        }
+
+        public static SafeArray operator + (int x, SafeArray y)
+        {
+            SafeArray temp = new SafeArray(y.length);
+            for (int i = 0; i < y.length; ++i) temp[i] = x + y[i];
+            return temp;
+        }
+
+        public static SafeArray operator ++ (SafeArray x)
+        {
+            SafeArray temp = new SafeArray(x.length);
+            for (int i = 0; i < x.length; ++i) temp[i] = ++x.a[i];
+            return temp;
+        }
+
+        public int this[int i]
+        {
+            get
+            {
+                if (i >= 0 && i < length) return a[i];
+                else throw new IndexOutOfRangeException();
+            }
+            set
+            {
+                if (i >= 0 && i < length) a[i] = value;
+                else throw new IndexOutOfRangeException();
+            }
+        }
+
+        public void Print (string name)
+        {
+            Console.WriteLine(name + ":");
+            for (int i = 0; i < length; ++i) Console.WriteLine("\t" + a[i]);
+            Console.WriteLine();
+        }
+
+        int[] a;
+        int length;
+    }
+
+    class Class1
+    {
+        static void Main()
+        {
+            try
+            {
+                SafeArray a1 = new SafeArray(5, 2, -1, 1, -2);
+                a1.Print("ARRAY 1");
+
+                SafeArray a2 = new SafeArray(1, 0, 3);
+                a2.Print("ARRAY 2"); a1++;
+
+                SafeArray a3 = a1 + a2;
+                a3.Print("SUM OF THE ARRAYS 1 AND 2");
+
+                a1 += 100;
+                a1.Print("ARRAY 1 + 100");
+
+                a1 = 100 + a1;
+                a1.Print("100 + ARRAY 1");
+
+                a2 += ++a2 + 1;
+                a2.Print("++a2 , a2+a2 +1");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+    }
+
+
+
+##
+
+
+
 #
