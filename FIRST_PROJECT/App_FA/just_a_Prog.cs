@@ -1962,4 +1962,63 @@ namespace ConsoleApplication1
 
 
 
+    class Monster
+    {
+        public Monster (int health , int ammo, string name)
+        {
+            this.health = health;
+            this.ammo = ammo;
+            this.name = name;
+        }
+
+        public override bool Equals(object.obj)
+        {
+            if (obj == null || GetType() != obj.GetType()) return false;
+
+            Monster temp = (Monster) obj;
+            return health == temp.health &&
+                    ammo == temp.ammo    &&
+                    name == temp.name;
+        }
+
+        public override int GetHashCode()
+        {
+            return name.GetHashCode();
+        }
+
+        public override string ToString()
+        {
+            return String.Format("Monster {0}\tHealth = {1} and ammo = {2}" , name,health, ammo);
+        }
+
+        string name;
+        int health, ammo;
+    }
+
+    class Class1
+    {
+        static void Main()
+        {
+            Monster X = new Monster(80, 80, "VASIA");
+            Monster Y = new Monster(80, 80, "VASIA");
+            Monster Z = X;
+
+            if (X == Y) Console.WriteLine("X==Y");
+            else Console.WriteLine("X!=Y");
+            if (X == Z) Console.WriteLine("X==Z");
+            else Console.WriteLine("X!=Z");
+
+            if (X.Equals(Y)) Console.WriteLine("X Equals Y");
+            else Console.WriteLine("X not Equals Y");
+
+            Console.WriteLine(X.GetType());
+        }
+    }
+
+
+
+##
+
+
+
 #
