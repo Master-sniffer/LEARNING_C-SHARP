@@ -1923,4 +1923,43 @@ namespace ConsoleApplication1
 
 
 
+    class Engine
+    {
+        public void Launch()
+        {
+            Console.WriteLine("OTCHISLEN\n");
+        }
+    }
+
+    class Plane
+    {
+        public Plane()
+        {
+            left = new Engine();
+            right = new Engine();
+        }
+
+        public void Launch_Engine()
+        {
+            left.Launch();
+            right.Launch();
+        }
+        Engine left, right;
+    }
+
+    class Class1
+    {
+        static void Main()
+        {
+            Plane Ah24_1 = new Plane();
+            Ah24_1.Launch_Engine();
+        }
+    }
+
+
+
+##
+
+
+
 #
