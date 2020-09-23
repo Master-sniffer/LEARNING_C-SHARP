@@ -1736,4 +1736,84 @@ namespace ConsoleApplication1
 
 
 
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Text;
+
+namespace ConsoleApplication1
+{
+    class SafeArray
+    {
+        public SafeArray (int size)
+        {
+            a = new int[size];
+            length = size;
+        }
+
+        public SafeArray (params int[] arr)
+        {
+            length = arr.Length;
+            a = new int[length];
+            for (int i = 0; i < length; ++i) a[i] = arr[i];
+        }
+
+        public static SafeArray operator ++(SafeArray x)
+        {
+            SafeArray temp = new SafeArray(x.length);
+            for (int i = 0; i < x.length; ++i)
+                temp[i] = ++x.a[i];
+            return temp;
+        }
+
+        public int this[int i]
+        {
+            get
+            {
+                if (i >= 0 && i < length) return a[i];
+                else throw new IndexOutOfRangeException();
+            }
+            set
+            {
+                if (i >= 0 && i < length) a[i] = value;
+                else throw new IndexOutOfRangeException();
+            }
+        }
+
+        public void Print (string name)
+        {
+            Console.WriteLine(name + ":");
+            for (int i = 0; i < length; ++i)
+                Console.WriteLine("\t" + a[i]);
+            Console.WriteLine();
+        }
+        int[] a; // закрытый массив
+        int length; // закрытая размерность
+    }
+
+    class Class1
+    {
+        static void Main()
+        {
+            try
+            {
+                SafeArray a1 = new SafeArray(5, 2, -1, 1, -2);
+                a1.Print("MASSIVE");
+                a1++;
+                a1.Print("ИНКРЕМЕНТ МАССИВА");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+    }
+}
+
+
+
+##
+
+
+
 #
