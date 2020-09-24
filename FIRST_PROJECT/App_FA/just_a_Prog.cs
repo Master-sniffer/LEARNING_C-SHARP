@@ -2118,4 +2118,54 @@ namespace ConsoleApplication1
 
 
 
+    // ПРИМЕР РЕАЛИЗАЦИИ IComparable
+
+    class Monster : IComparable
+    {
+        public Monster (int health , int ammo, string name)
+        {
+            this.health = health;
+            this.ammo = ammo;
+            this.name = name;
+        }
+
+        virtual public void Passport()
+        {
+            Console.WriteLine("Monster {0} \t health - {1} ammo = {2} ", name, health, ammo);
+        }
+
+        public int CompareTo(object obj) // реализация интерфейся
+        {
+            Monster temp = (Monster)obj;
+            if (this.health > temp.health) return 1;
+            if (this.health < temp.health) return -1;
+            return 0;
+        }
+
+        string name;
+        int health, ammo;
+    }
+
+    class Class1
+    {
+        static void Main()
+        {
+            const int n = 3;
+            Monster[] stado = new Monster[n];
+
+            stado[0] = new Monster(50, 50, "VASIAN");
+            stado[1] = new Monster(80, 80, "PETIA");
+            stado[2] = new Monster(40, 10, "MASHA");
+
+            Array.Sort(stado);
+            foreach (Monster elem in stado) elem.Passport();
+        }
+    }
+
+
+
+##
+
+
+
 #
