@@ -2251,4 +2251,96 @@ namespace ConsoleApplication1
 
 
 
+   // ПЕРЕГРУЗКА ОПЕРАЦИЙ ОТНОШЕНИЯ
+
+    class Monster : IComparable
+    {
+        public Monster (int health , int ammo, string name)
+        {
+            this.health = health;
+            this.ammo = ammo;
+            this.name = name;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null || GetType() != obj.GetType()) return false;
+
+            Monster temp = (Monster)obj;
+            return health == temp.health &&
+                    ammo == temp.ammo &&
+                    name == temp.name;
+        }
+
+        public override int GetHashCode()
+        {
+            return name.GetHashCode();
+        }
+
+        public static bool operator == (Monster a, Monster b)
+        {
+            return a.Equals(b);
+        }
+
+        // HOW WE CAN DO IT - 1 VAR
+        //public static bool operator == (Monster a, Monster b)
+        //{
+        //    return (a.CompareTo(b) == 0);
+        //}
+
+        public static bool operator != (Monster a, Monster b)
+        {
+            return !a.Equals(b);
+        }
+
+        public static bool operator < (Monster a, Monster b)
+        {
+            return (a.CompareTo(b) < 0);
+        }
+        public static bool operator > (Monster a, Monster b)
+        {
+            return (a.CompareTo(b) > 0);
+        }
+        
+        public static bool operator <=(Monster a, Monster b)
+        {
+            return (a.CompareTo(b) <= 0);
+        }
+        
+        public static bool operator >=(Monster a, Monster b)
+        {
+            return (a.CompareTo(b) >= 0);
+        }
+
+        public int CompareTo (object obj)
+        {
+            Monster temp = (Monster)obj;
+            if (this.health > temp.health) return 1;
+            if (this.health < temp.health) return -1;
+            return 0;
+        }
+
+        string name;
+        int health, ammo;
+    }
+
+    class Class1
+    {
+        static void Main()
+        {
+            Monster Vasia = new Monster(70, 80, "VASIA");
+            Monster Petia = new Monster(80, 80, "PETIA");
+
+            if (Vasia > Petia) Console.WriteLine("VASIA IS BIGGER THAN PETIA");
+            else if (Vasia == Petia) Console.WriteLine("VASIA == PETIA");
+            else Console.WriteLine("VASIA IS SHORTER THAN PETIA");
+        }
+    }
+
+
+
+##
+
+
+
 #
