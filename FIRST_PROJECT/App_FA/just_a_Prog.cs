@@ -2343,4 +2343,31 @@ namespace ConsoleApplication1
 
 
 
+    // ПРОСТЕЙШИЙ ИТЕРАТОР
+
+    class Num : IEnumerable
+    {
+        public IEnumerable GetEnumerator()
+        {
+            yield return "one";
+            yield return "two";
+            yield return "three";
+            yield return "OOPS";
+        }
+    }
+
+    class Class1
+    {
+        static void Main()
+        {
+            foreach (string s in new Num()) Console.WriteLine(s); 
+        }
+    }
+
+
+
+##
+
+
+
 #
