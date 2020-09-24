@@ -2085,4 +2085,37 @@ namespace ConsoleApplication1
 
 
 
+        // ИНТЕРФЕЙС И НАСЛЕДОВАНИЕ
+        interface IBase
+        {
+            void F(int i);
+        }
+
+        interface Ileft : IBase
+        {
+            new void F(int i); // Переопределение метода F
+        }
+        interface IRight : IBase
+        {
+            void G();
+        }
+        interface Iderived : Ileft, IRight { }
+
+    class A
+    {
+        void Test (IDerived d)
+        {
+            d.F(1);
+            ((IBase)d).F(1);
+            ((Ileft)d).F(1);
+            ((IRight)d).F(1);
+        }
+    }
+
+
+
+##
+
+
+
 #
