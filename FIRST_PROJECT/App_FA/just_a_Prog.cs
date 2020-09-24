@@ -2370,4 +2370,25 @@ namespace ConsoleApplication1
 
 
 
+    // ЕЩЕ ОДИН ПРОСТОЙ ИНУМЕРАТОР
+
+    class Class1
+    {
+        public static IEnumerable Count (int from , int to)
+        {
+            from = 1;
+            while (from <= to) yield return from++;
+        }
+        static void Main()
+        {
+            foreach (int i in Count(1, 5)) Console.WriteLine(i);
+        }
+    }
+
+
+
+##
+
+
+
 #
