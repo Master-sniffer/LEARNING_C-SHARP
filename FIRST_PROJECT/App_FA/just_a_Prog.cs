@@ -2066,4 +2066,23 @@ namespace ConsoleApplication1
 
 
 
+    // РАБОТА С ОБЪЕКТАМИ ЧЕРЕЗ ИНТЕРФЕЙСЫ С ПОМОЩЬЮ IS
+   class Class1
+    {
+        static void Act(object A)
+        {
+            if (A is IAction)
+            {
+                IAction Actor = (IAction)A;
+                Actor.Draw();
+            }
+        }
+    }
+
+
+
+##
+
+
+
 #
