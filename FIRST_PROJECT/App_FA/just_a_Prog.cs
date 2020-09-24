@@ -2168,4 +2168,87 @@ namespace ConsoleApplication1
 
 
 
+    // СОРТИРОВКА ПО 2 КРИТЕРИЯМ
+
+    class Monster
+    {
+        public Monster (int health , int ammo , string name)
+        {
+            this.health = health;
+            this.ammo = ammo;
+            this.name = name;
+        }
+
+        public int Ammo
+        {
+            get { return ammo; }
+            set
+            {
+                if (value > 0) ammo = value;
+                else ammo = 0;
+            }
+        }
+
+        public string Name
+        {
+            get { return name; }
+        }
+
+        virtual public void Passport()
+        {
+            Console.WriteLine("Monster {0}\t health={1} and ammo = {2}", name, health, ammo);
+        }
+
+        public class SortByName : IComparer
+        {
+            int IComparer.Compare(object ob1, object ob2)
+            {
+                Monster m1 = (Monster)ob1;
+                Monster m2 = (Monster)ob2;
+                return String.Compare(m1.Name, m2.Name);
+            }
+        }
+
+        public class SortByAmmo : IComparer
+        {
+            int IComparer.Compare(object ob1, object ob2)
+            {
+                Monster m1 = (Monster)ob1;
+                Monster m2 = (Monster)ob2;
+                if (m1.Ammo > m2.Ammo) return 1;
+                if (m1.Ammo < m2.Ammo) return -1;
+                return 0;
+            }
+        }
+        string name;
+        int health, ammo;
+    }
+
+    class Class1
+    {
+        static void Main()
+        {
+            const int n = 3;
+            Monster[] stado = new Monster[n];
+            stado[0] = new Monster(50, 50, "VASIA");
+            stado[1] = new Monster(80, 80, "MASHA");
+            stado[2] = new Monster(40, 10, "PETIA");
+
+            Console.WriteLine("SORT BY NAME\n");
+            Array.Sort(stado, new Monster.SortByAmmo());
+            foreach (Monster elem in stado) elem.Passport();
+
+            Console.WriteLine("SORT BY THE SURROUNDINGS");
+            Array.Sort(stado, new Monster.SortByAmmo());
+            foreach (Monster elem in stado) elem.Passport();
+
+        }
+    }
+
+
+
+##
+
+
+
 #
