@@ -2021,4 +2021,49 @@ namespace ConsoleApplication1
 
 
 
+ // РЕАЛИЗАЦИЯ ИНТЕРФЕЙСА
+    interface IAction
+    {
+        void Draw();
+        int Attack(int a);
+        void Die();
+        int Power { get; }
+    }
+
+    class Monster
+    {
+        public void Draw()
+        {
+            Console.WriteLine("HEY "+name);
+        }
+
+        public int Attack(int ammo_)
+        {
+            ammo -= ammo_;
+            if (ammo_ > 0) Console.WriteLine("BAM !");
+            else ammo_ = 0;
+            return ammo;
+        }
+
+        public void Die()
+        {
+            Console.WriteLine("MONSTER " + name + "RIPPPP");
+            health = 0;
+        }
+
+        public int Power
+        {
+            get
+            {
+                return ammo * health;
+            }
+        }
+    }
+
+
+
+##
+
+
+
 #
