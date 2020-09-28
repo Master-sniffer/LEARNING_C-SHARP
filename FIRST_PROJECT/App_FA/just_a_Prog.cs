@@ -2436,4 +2436,34 @@ namespace ConsoleApplication1
 
 
 
+    // ПЕРЕЧИСЛЕНИЕ
+    struct warrior
+    {
+        public enum Warrior_rank
+        {
+            Rook , Sergant, Mayor, General
+        }
+
+        public string surname;
+        public Warrior_rank rank;
+    }   
+
+    class Class1
+    {
+        static void Main()
+        {
+            warrior x;
+            x.surname = "Ivanov";
+            x.rank = warrior.Warrior_rank.Sergant;
+
+            Console.WriteLine(x.rank + " " + x.surname);
+        }
+    }
+
+
+
+##
+
+
+
 #
