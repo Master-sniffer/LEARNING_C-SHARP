@@ -2391,4 +2391,49 @@ namespace ConsoleApplication1
 
 
 
+    struct Complex
+    {
+        public double re, im;
+        public Complex (double re_ , double im_)
+        {
+            re = re_; im = im_; // МОЖНО ВМЕСТО ЭТОГО ИСПОЛЬЗОВАТЬ this.re , this.im
+        }
+
+        public static Complex operator + (Complex a, Complex b)
+        {
+            return new Complex(a.re + b.re, a.im + b.im);
+        }
+
+        public override string ToString()
+        {
+            return (string.Format("({0,2:0.##};{1,2:0.##})", re, im));
+        }
+    }
+
+    class Class1
+    {
+        static void Main()
+        {
+            Complex a = new Complex(1.2345, 5.6);
+
+            Console.WriteLine("a= " + a);
+
+            Complex b;
+            b.re = 10; b.im = 1;
+            Console.WriteLine("b= " + b);
+
+            Complex c = new Complex();
+            Console.WriteLine("c= " + c);
+
+            c = a + b;
+            Console.WriteLine("c= " + c);
+        }
+    }
+
+
+
+##
+
+
+
 #
