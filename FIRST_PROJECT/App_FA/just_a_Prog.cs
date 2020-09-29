@@ -2679,4 +2679,54 @@ namespace ConsoleApplication1
 
 
 
+    class subj
+    {
+        public event EventHandler Oops;
+
+        public void CryOoops()
+        {
+            Console.WriteLine("Oops!");
+            if (Oops != null) Oops(this,null);
+        }
+    }
+
+    class ObsA
+    {
+        public void OnOops (object sender , EventArgs e)
+        {
+            Console.WriteLine(" I SEE THAT'S OOPS");
+        }
+    }
+
+    class ObsB
+    {
+        public static void OnOops (object sender, EventArgs e)
+        {
+            Console.WriteLine("WELL , I SEE THAT TOO");
+        }
+    }
+
+    class Class1
+    {
+        static void Main()
+        {
+            subj s = new subj();
+
+            ObsA o1 = new ObsA();
+            ObsA o2 = new ObsA();
+
+            s.Oops += new EventHandler(o1.OnOops);
+            s.Oops += new EventHandler(o2.OnOops);
+            s.Oops += new EventHandler(ObsB.OnOops);
+
+            s.CryOoops();
+        }
+    }
+
+
+
+##
+
+
+
 #
