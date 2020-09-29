@@ -2612,4 +2612,71 @@ namespace ConsoleApplication1
 
 
 
+    //  ОБРАБОТКА ИСКЛЮЧЕНИЙ ПРИ ВЫЗОВЕ ДЕЛЕГАТОВ
+    delegate void Del(ref string s);
+
+    class Class1
+    {
+        public static void COO1(ref string s)
+        {
+            Console.WriteLine("CALLED METHOD COO1");
+            string temp = "";
+            for (int i = 0; i < s.Length; ++i)
+            {
+                if (s[i] == 'o' || s[i] == 'O') temp += 'O';
+                else if (s[i] == 'l') temp += 1;
+                else temp += s[i];
+            }
+            s = temp;
+        }
+
+        public static void Hack (ref string s)
+        {
+            Console.WriteLine("Called method HACK");
+            string temp = "";
+            for (int i = 0; i <s.Length; ++i)
+            {
+                if (i / 2 * 2 == i) temp += char.ToUpper(s[i]);
+                else temp += s[i];
+            }
+
+            s = temp;
+
+        }
+
+        public static void BadHack(ref string s)
+        {
+            Console.WriteLine("CALLED BADHACK, LMAO");
+            throw new Exception();
+        }
+
+        static void Main()
+        {
+            string s = "COOL HAЦKERS";
+            Del d = new Del(COO1); // создание экземпляра делегата
+            d += new Del(BadHack); // дополнение списка методов
+            d += new Del(Hack); // дополнение методов списка
+
+            foreach (Del fun in d.GetInvocationList())
+            {
+                try
+                {
+                    fun(ref s);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    Console.WriteLine("Exception method " + fun.Method.Name);
+                }
+            }
+            Console.WriteLine("RESULT IS " + s);
+        }
+    }
+
+
+
+##
+
+
+
 #
