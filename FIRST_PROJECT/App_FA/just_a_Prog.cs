@@ -2574,4 +2574,42 @@ namespace ConsoleApplication1
 
 
 
+    // ИСПОЛЬЗОВАНИЕ ДЕЛЕГАТА
+    public delegate double Fun(double x);
+
+    class Class1
+    {
+        public static void Table (Fun F, double x, double b)
+        {
+            Console.WriteLine(" ---X---Y---");
+            while (x <= b)
+            {
+                Console.WriteLine("| {0,8:0.00} | {1,8:0.000} |", x, F(x));
+                x += 1;
+            }
+            Console.WriteLine("-------");
+        }
+
+        public static double Simple (double x)
+        {
+            return 1;
+        }
+        
+        static void Main()
+        {
+            Console.WriteLine("TABKE OF VARS OF SIN");
+
+            Table(new Fun(Math.Sin), -2, 2);
+
+            Console.WriteLine("TABLE OF FUNCS SIMPLE");
+            Table(new Fun(Simple), 0, 3);
+        }
+    }
+
+
+
+##
+
+
+
 #
