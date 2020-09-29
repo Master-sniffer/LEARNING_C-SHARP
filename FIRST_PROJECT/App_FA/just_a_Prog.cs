@@ -2466,4 +2466,53 @@ namespace ConsoleApplication1
 
 
 
+    // ИСПОЛЬЗОВАНИЕ ДЕЛЕГАТОВ
+    delegate void Del(ref string s);
+
+    class Class1
+    {
+        public static void C001 (ref string s)
+        {
+            string temp = "";
+            for (int i=0; i < s.Length; i++)
+            {
+                if (s[i] == 'o' || s[i] == 'O') temp += 'O';
+                else if (s[i] == 'l') temp += 'l';
+                else temp += s[i];
+            }
+            s = temp;
+        }
+
+        public static void Hack (ref string s)
+        {
+            string temp = "";
+            for (int i = 0; i < s.Length; i++)
+                if (i / 2 * 2 == i) temp += char.ToUpper(s[i]);
+                else temp += s[i];
+
+            s = temp;
+        }
+
+        static void Main()
+        {
+            string s = "Cool hackers";
+            Del d; // ЭКЗЕМПЛЯР КЛАССА
+
+            for (int i=0; i <2; ++i)
+            {
+                d = new Del(C001); // ИНИЦИАЛИЗАЦИЯ МЕТОДОМ 1
+                if (i == 1) d = new Del(Hack); // ИНИЦИАЛИЗАЦИЯ МЕТОДОМ 2
+
+                d(ref s); // использование делегата для вызова методов
+                Console.WriteLine(s);
+            }
+        }
+    }
+
+
+
+##
+
+
+
 #
