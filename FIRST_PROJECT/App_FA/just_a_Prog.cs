@@ -2515,4 +2515,63 @@ namespace ConsoleApplication1
 
 
 
+    // ОПОВЕЩЕНИЕ НАБЛЮДАТЕЛЕЙ С ПОМОЩЬЮ ДЕЛЕГАТА
+    public delegate void Del(object o);
+
+    class Subj
+    {
+        Del dels;
+
+        public void Register (Del d)
+        {
+            dels += d;
+        }
+
+        public void OOPS()
+        {
+            Console.WriteLine("OOPS!!!");
+            if (dels != null) dels(this);
+        }
+    }
+
+    class ObsA
+    {
+        public void Do (object o)
+        {
+            Console.WriteLine("I SEE THAT'S OOPS !");
+        }
+    }
+
+    class ObsB
+    {
+        public static void See (object o)
+        {
+            Console.WriteLine("I SEE IT TOO, MAN !\nFUCKING OOPS");
+        }
+    }
+
+    class Class1
+    {
+        static void Main()
+        {
+            Subj s = new Subj(); // ОБЪЕКТ КЛАССА ИСТОЧНИКА
+
+            ObsA o1 = new ObsA(); // ОБЪЕКТЫ КЛАССА НАБЛЮДАТЕЛЯ
+            ObsA o2 = new ObsA();
+
+            s.Register(new Del(o1.Do)); // РЕГИСТРАЦИЯ МЕТОДОВ
+            s.Register(new Del(o2.Do)); // НАБЛЮДАТЕЛЕЙ В ИСТОЧНИКЕ
+            s.Register(new Del(ObsB.See)); // (ЭКЗЕМПЛЯРЫ ДЕЛЕГАТА)
+
+            s.OOPS(); // ИНИЦИАЛИЗАЦИЯ СОБЫТИЯ
+        }
+    }
+}
+
+
+
+##
+
+
+
 #
