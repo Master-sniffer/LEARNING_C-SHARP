@@ -2766,4 +2766,95 @@ namespace ConsoleApplication1
 
 
 
+    public delegate bool AsyncDelegate(int Num, out int m1, out int m2); // Асинхронный делегат
+
+    public class Factorizer
+    {
+        public bool Factorize(int Num, out int m1, out int m2) // класс , выполняющий разложение числа на множители
+        {
+            m1 = 1; m2 = Num;
+            for (int i = 2; i < Num; i++)
+                if (0 == (Num % i)) { m1 = i; m2 = Num / i; break; }
+
+            if (1 == m1) return false;
+            else return true;
+        }
+    }
+
+    public class PNum
+    {
+        private int Number;
+        public PNum(int number) { Number = number; }
+        [OnewWayAttribute()]
+
+        public void Res (IAsyncResult ar)
+        {
+            int m1, m2;
+
+            AsyncDelegate ad = (AsyncDelegate)((IAsyncResult)ar).AsyncDelegate;
+
+            // получение результатов метода Factorize
+            ad.EndInvoke(out m1, out m2, ar);
+
+            Console.WriteLine("First method : Multiplers {0} : {1} {2}", Number, m1, m2);
+        }
+    }
+
+    public class Simple
+    {
+        public void Num1() // используется функция обратного вызова
+        {
+            Factorizer f = new Factorizer();
+            AsyncDelegate ad = new AsyncDelegate(f.Factorize);
+
+            int Num = 1000584123, tmp;
+            // создание экземпляра класса , который будет вызван после завершения работы метода Factorize
+
+            PNum n = new PNum(Num);
+
+            AsyncCallback callback = new AsyncCallback(n.Res);
+            // Асинхронный вызов метода Factorize 
+
+            IAsyncResult ar = ad.BeginInvoke(Num, out tmp, out tmp, callback, null);
+        }
+        // 2 Способ - используется ожидание окончание выполнения
+
+        public void Num2()
+        {
+            Factorizer f = new Factorizer();
+            AsyncDelegate ad = new AsyncDelegate(f.Factorize);
+
+            int Num = 10085241241, tmp;
+
+            PNum n = new PNum(Num);
+
+            AsyncCallback callback = new AsyncCallback(n.Res);
+
+            IAsyncResult ar = ad.BeginInvoke(Num, out tmp, out tmp, null, null);
+            // Ожидание завершения
+            ar.AsyncWaitHandle.WaitOne(10000, false);
+
+            if (ar.IsCompleted)
+            {
+                int m1, m2;
+                ad.EndInvoke(out m1, out m2, ar);
+                Console.WriteLine("Second method : Multipliers {0} : {1} {2}", Num, m1, m2);
+            }
+
+        }
+
+        public static void Main()
+        {
+            Simple s = new Simple();
+            s.Num1();
+            s.Num2();
+        }
+    }
+
+
+
+##
+
+
+
 #
