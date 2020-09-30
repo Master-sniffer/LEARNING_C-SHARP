@@ -1,5 +1,9 @@
 using System; // позволяет юзать имена стандартных классов из пространства имен system
 using System.IO; // Для работы с файлами и не только !
+using System.Collections;
+using System.Collections.Generic;
+using System.Text;
+using System.Threading;
 namespace ConsoleApplication1 // создает для проекта собственное пр-во имен , названное по умолчанию ConsoleApplication 1
 {
     ///<summary>
@@ -2720,6 +2724,39 @@ namespace ConsoleApplication1
             s.Oops += new EventHandler(ObsB.OnOops);
 
             s.CryOoops();
+        }
+    }
+
+
+
+##
+
+
+
+    // ОДНОВРЕМЕННАЯ РАБОТА 2 ПОТОКОВ С ПОМОЩЬЮ THREAD
+
+    class Program
+    {
+        static public void HedgeHog()
+        {
+            for (int i=0; i < 6; ++i)
+            {
+                Console.WriteLine(i); Thread.Sleep(1000);
+            }
+        }
+
+        static void Main()
+        {
+            Console.WriteLine("FIRST FLOW " + Thread.CurrentThread.GetHashCode());
+
+            Thread ta = new Thread(new ThreadStart(HedgeHog));
+            Console.WriteLine("SECOND FLOW " + ta.GetHashCode());
+            ta.Start();
+
+            for (int i = 0; i>-6; --i)
+            {
+                Console.WriteLine(" " + i); Thread.Sleep(400); // SLEEP нужен лоя остановки проги на это кол-во милисекунд
+            }
         }
     }
 
