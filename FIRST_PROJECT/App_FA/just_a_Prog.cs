@@ -2899,4 +2899,54 @@ namespace ConsoleApplication1
 
 
 
+    // АСИНХРОННЫЙ ВВОЖ И ВЫВОД
+
+    class Demo
+    {
+        public void UserInput()
+        {
+            string s;
+            do
+            {
+                Console.WriteLine("Enter the string and press enter to finish\n");
+                s = Console.ReadLine();
+            } while (s.Length != 0);
+        }
+
+        public void OnCompleteRead(IAsyncResult ar)
+        {
+            int bytes = f.EndRead(ar);
+            Console.WriteLine("Counted " + bytes);
+        }
+
+        public void AsyncRead()
+        {
+            f = new FileStream("Like_Or_Hate.txt", FileMode.Open, FileAccess.Read, FileShare.Read, buf.Length, true);
+
+            callback = new AsyncCallback(OnCompleteRead);
+
+            f.BeginRead(buf, 0, buf.Length, callback, null);
+        }
+
+        FileStream f;
+        byte[] buf = new byte[66666666];
+        AsyncCallback callback;
+    }
+
+    class Program
+    {
+        static void Main()
+        {
+            Demo d = new Demo();
+            d.AsyncRead();
+            d.UserInput();
+        }
+    }
+
+
+
+##
+
+
+
 #
