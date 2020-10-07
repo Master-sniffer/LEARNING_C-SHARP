@@ -3101,4 +3101,53 @@ namespace ConsoleApplication1
 
 
 
+    class Class1
+    {
+        static void DirInfo(DirectoryInfo di)
+        {
+            // вывод инфы о каталоге
+            Console.WriteLine("===Direct info===");
+            Console.WriteLine("Full name: " + di.FullName);
+            Console.WriteLine("Name " + di.Name);
+            Console.WriteLine("Parent " + di.Parent);
+            Console.WriteLine("Creation " + di.CreationTime);
+            Console.WriteLine("Attributes " + di.Attributes);
+            Console.WriteLine("Root " + di.Root);
+            Console.WriteLine("===================");
+        }
+
+        static void Main()
+        {
+            DirectoryInfo di1 = new DirectoryInfo(@"c:\MyDir");
+            DirectoryInfo di2 = new DirectoryInfo(@"c:\MyDir\temp");
+            try
+            {
+                // создать каталог
+                di1.Create();
+                di2.Create();
+
+                // вывести инфу о каталогах
+
+                DirInfo(di1);
+                DirInfo(di2);
+
+                // попытка удалить каталог
+                Console.WriteLine("Попытка удалить {0}. ", di1.Name);
+                di1.Delete();
+                // Чтобы удалить непустой каталог пишем так di1.Delete(true);
+            }
+
+            catch (Exception)
+            {
+                Console.WriteLine("AH, an exception");
+            }
+        }
+    }
+
+
+
+##
+
+
+
 #
