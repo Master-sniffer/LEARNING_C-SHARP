@@ -3011,4 +3011,50 @@ namespace ConsoleApplication1
 
 
 
+    class Class1
+    {
+        static void Main()
+        {
+            try
+            {
+                StreamReader f = new StreamReader("Numbers.txt");
+
+                string s;
+
+                const int n = 20;
+                int[] a = new int[n];
+                string[] buf;
+                
+                while ((s = f.ReadLine()) != null)
+                {
+                    buf = s.Split(' ');
+                    long sum = 0;
+                    for (int i =0; i< buf.Length; ++i)
+                    {
+                        a[i] = Convert.ToInt32(buf[i]);
+                        sum += a[i];
+                    }
+                    Console.WriteLine("{0} sum: {1}", s, sum);
+                }
+                f.Close();
+            }
+            catch (FileNotFoundException e)
+            {
+                Console.WriteLine("UMMMMMMMMMM", e.Message);
+                return;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error " + e.Message);
+            }
+
+        }
+    }
+
+
+
+##
+
+
+
 #
