@@ -2949,4 +2949,32 @@ namespace ConsoleApplication1
 
 
 
+    class Class1
+    {
+        static void Main()
+        {
+            try
+            {
+                StreamWriter f = new StreamWriter("text.txt");
+                f.WriteLine("Enter in the txt file");
+                double a = 12.234;
+                int b = 29;
+                f.WriteLine("a={0,6:C} b={1,2:X}", a, b);
+                f.Close();
+            }
+
+            catch (Exception e)
+            {
+                Console.WriteLine("Error " + e.Message);
+                return;
+            }
+        }
+    }
+
+
+
+##
+
+
+
 #
