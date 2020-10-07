@@ -3187,4 +3187,66 @@ namespace ConsoleApplication1
 
 
 
+{
+    [Serializable]
+    abstract class Spirit
+    {
+        public abstract void Passport();
+    }
+
+    [Serializable]
+    class Monster : Spirit
+    {
+        public Monster(int health, int ammo, string name)
+        {
+            this.health = health;
+            this.ammo = ammo;
+            this.name = name;
+        }
+        override public void Passport()
+        {
+            Console.WriteLine("Monster {0} \t health = {1} ammo {2}", name, health, ammo);
+        }
+
+        string name;
+        int health, ammo;
+    }
+
+    [Serializable]
+    class Demo
+    {
+        public int a = 1;
+        [NonSerialized]
+        public double b;
+        public Monster X, Y;
+    }
+
+    class Class1
+    {
+        static void Main()
+        {
+            Demo d = new Demo();
+            d.X = new Monster(100, 80, "Vasia");
+            d.Y = new Monster(120, 50, "Petia");
+            d.a = 2;
+            d.b = 2;
+
+            d.X.Passport();     d.Y.Passport();
+            Console.WriteLine(d.a); Console.WriteLine(d.b);
+
+            FileStream f = new FileStream("Demo.bin", FileMode.Create);
+            BinaryFormatter bf = new BinaryFormatter();
+
+            bf.Serialize(f, d); // сохранение объекта d в потоке f
+
+            f.Close();
+        }
+    }
+
+
+
+##
+
+
+
 #
