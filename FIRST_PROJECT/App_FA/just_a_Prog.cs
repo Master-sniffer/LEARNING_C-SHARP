@@ -2977,4 +2977,38 @@ namespace ConsoleApplication1
 
 
 
+    class Class1
+    {
+        static void Main()
+        {
+            try
+            {
+                StreamWriter f = new StreamWriter("text.txt");
+                string s;
+                long i = 0;
+
+                while ((s = f.ReadLine()) != null)
+                    Console.WriteLine("{0}:{1}", ++i, s);
+                f.Close();
+            }
+
+            catch (FileNotFoundException e)
+            {
+                Console.WriteLine("Error " + e.Message + "Something is wrong with the name of the file");
+                return;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error " + e.Message );
+                return;
+            }
+        }
+    }
+
+
+
+##
+
+
+
 #
