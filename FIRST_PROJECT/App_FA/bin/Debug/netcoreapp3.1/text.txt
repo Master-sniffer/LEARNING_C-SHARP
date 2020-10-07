@@ -1,0 +1,2 @@
+Enter in the txt file
+a=12,23 ₽ b=1D
