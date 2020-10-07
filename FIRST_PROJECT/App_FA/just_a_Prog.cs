@@ -3057,4 +3057,48 @@ namespace ConsoleApplication1
 
 
 
+    class Class1
+    {
+        static void Main()
+        {
+            try
+            {
+                FileStream f = new FileStream(@"D:\C#\binary", FileMode.Open);
+                BinaryReader fin = new BinaryReader(f);
+
+                long n = f.Length / 8; //кол-во чисел в файле
+                double[] x = new double[n];
+
+                long i = 0;
+                try
+                {
+                    while (true) x[i++] = fin.ReadDouble();
+                }
+                catch (EndOfStreamException e) { }
+                foreach (double d in x) Console.WriteLine("  " + d); // вывод
+                fin.Close();
+                f.Close();
+            }
+
+            catch (FileNotFoundException e)
+            {
+                Console.WriteLine(e.Message);
+                Console.WriteLine("Check the name of the file");
+                return;
+            }
+
+            catch (Exception e)
+            {
+                Console.WriteLine("Error " + e.Message);
+                return;
+            }
+        }
+    }
+
+
+
+##
+
+
+
 #
