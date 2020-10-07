@@ -3150,4 +3150,41 @@ namespace ConsoleApplication1
 
 
 
+    class Class1
+    {
+        static void Main()
+        {
+            try
+            {
+                string DestName = @"d:\temp\";
+                DirectoryInfo dest = new DirectoryInfo(DestName);
+                dest.Create(); // создание целевого каталога
+
+                DirectoryInfo dir = new DirectoryInfo(@"d:\foto");
+
+                if (!dir.Exists) // проверка существования каталога
+                {
+                    Console.WriteLine("Catalog " + dir.Name + " Doesnt exist");
+                    return;
+                }
+
+                FileInfo[] files = dir.GetFiles("*.jpg"); // список файлов
+                foreach (FileInfo f in files)
+                    f.CopyTo(dest + f.Name);
+
+                Console.WriteLine("Copied to " + files.Length + " jpg files");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("error " + e.Message);
+            }
+        }
+    }
+
+
+
+##
+
+
+
 #
