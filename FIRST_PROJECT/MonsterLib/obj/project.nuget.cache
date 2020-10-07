@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "jYc1KLBxi5I3c5dnJ3+7BMFEX8MujN6yEbidLtDodC3VTFfmqxlwG1RGJb8gH3fgYXj0YHV09vKNwYfWNUH0qQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\D.A.N\\source\\repos\\MonsterLib\\MonsterLib.csproj",
+  "expectedPackageFiles": [
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

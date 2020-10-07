@@ -1,0 +1,9 @@
+C:\Users\D.A.N\source\repos\MonsterLib\obj\Debug\netstandard2.0\MonsterLib.csprojAssemblyReference.cache
+C:\Users\D.A.N\source\repos\MonsterLib\obj\Debug\netstandard2.0\MonsterLib.AssemblyInfoInputs.cache
+C:\Users\D.A.N\source\repos\MonsterLib\obj\Debug\netstandard2.0\MonsterLib.AssemblyInfo.cs
+C:\Users\D.A.N\source\repos\MonsterLib\obj\Debug\netstandard2.0\MonsterLib.csproj.CoreCompileInputs.cache
+C:\Users\D.A.N\source\repos\MonsterLib\bin\Debug\netstandard2.0\MonsterLib.deps.json
+C:\Users\D.A.N\source\repos\MonsterLib\bin\Debug\netstandard2.0\MonsterLib.dll
+C:\Users\D.A.N\source\repos\MonsterLib\bin\Debug\netstandard2.0\MonsterLib.pdb
+C:\Users\D.A.N\source\repos\MonsterLib\obj\Debug\netstandard2.0\MonsterLib.dll
+C:\Users\D.A.N\source\repos\MonsterLib\obj\Debug\netstandard2.0\MonsterLib.pdb
