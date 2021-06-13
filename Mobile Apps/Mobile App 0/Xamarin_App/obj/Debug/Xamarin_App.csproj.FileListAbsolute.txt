@@ -1,0 +1,6 @@
+/Users/NONE/Projects/Xamarin_App/Xamarin_App/bin/Debug/Xamarin_App.dll
+/Users/NONE/Projects/Xamarin_App/Xamarin_App/bin/Debug/Xamarin_App.pdb
+/Users/NONE/Projects/Xamarin_App/Xamarin_App/obj/Debug/Xamarin_App.csprojAssemblyReference.cache
+/Users/NONE/Projects/Xamarin_App/Xamarin_App/obj/Debug/Xamarin_App.csproj.CoreCompileInputs.cache
+/Users/NONE/Projects/Xamarin_App/Xamarin_App/obj/Debug/Xamarin_App.dll
+/Users/NONE/Projects/Xamarin_App/Xamarin_App/obj/Debug/Xamarin_App.pdb
