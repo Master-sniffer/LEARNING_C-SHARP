@@ -1,6 +1,0 @@
-/Users/NONE/Projects/Xamarin_App/Android/obj/Debug/MonoAndroid,Version=v11.0.AssemblyAttributes.cs
-/Users/NONE/Projects/Xamarin_App/Android/obj/Debug/build.props
-/Users/NONE/Projects/Xamarin_App/Android/obj/Debug/adb.props
-/Users/NONE/Projects/Xamarin_App/Android/obj/Debug/Android.csprojAssemblyReference.cache
-/Users/NONE/Projects/Xamarin_App/Android/obj/Debug/stamp/_BuildLibraryImportsCache.stamp
-/Users/NONE/Projects/Xamarin_App/Android/obj/Debug/res.flag
