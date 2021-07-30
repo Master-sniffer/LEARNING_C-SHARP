@@ -47,12 +47,12 @@ namespace WinFormsApp1
             this.Deleting = new System.Windows.Forms.Button();
             this.Updating = new System.Windows.Forms.Button();
             this.Clearing = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.GridView = new System.Windows.Forms.DataGridView();
             this.Searching = new System.Windows.Forms.Label();
             this.ForSearching = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,17 +83,17 @@ namespace WinFormsApp1
             this.ContactBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ContactBox.Location = new System.Drawing.Point(1609, 43);
             this.ContactBox.Name = "ContactBox";
+            this.ContactBox.ReadOnly = true;
             this.ContactBox.Size = new System.Drawing.Size(391, 43);
             this.ContactBox.TabIndex = 2;
-            this.ContactBox.Text = "Input Your Id Here";
             // 
             // NameBox
             // 
             this.NameBox.Location = new System.Drawing.Point(1609, 142);
             this.NameBox.Name = "NameBox";
+            this.NameBox.PlaceholderText = "Input Your name Here";
             this.NameBox.Size = new System.Drawing.Size(391, 43);
             this.NameBox.TabIndex = 4;
-            this.NameBox.Text = "Input Your name Here";
             // 
             // NameBX
             // 
@@ -111,9 +111,9 @@ namespace WinFormsApp1
             // 
             this.SurnameBox.Location = new System.Drawing.Point(1609, 232);
             this.SurnameBox.Name = "SurnameBox";
+            this.SurnameBox.PlaceholderText = "Input Your surname Here";
             this.SurnameBox.Size = new System.Drawing.Size(391, 43);
             this.SurnameBox.TabIndex = 8;
-            this.SurnameBox.Text = "Input Your surname Here";
             // 
             // Surname
             // 
@@ -130,9 +130,9 @@ namespace WinFormsApp1
             // 
             this.NumberBox.Location = new System.Drawing.Point(1609, 330);
             this.NumberBox.Name = "NumberBox";
+            this.NumberBox.PlaceholderText = "Input Your number Here";
             this.NumberBox.Size = new System.Drawing.Size(391, 43);
             this.NumberBox.TabIndex = 6;
-            this.NumberBox.Text = "Input Your number Here";
             // 
             // ContNum
             // 
@@ -151,9 +151,9 @@ namespace WinFormsApp1
             this.textBox1.Location = new System.Drawing.Point(1609, 435);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
+            this.textBox1.PlaceholderText = "Input Your addr Here";
             this.textBox1.Size = new System.Drawing.Size(391, 156);
             this.textBox1.TabIndex = 10;
-            this.textBox1.Text = "Input Your addr Here";
             // 
             // Addr
             // 
@@ -189,7 +189,6 @@ namespace WinFormsApp1
             this.ChooseGender.Name = "ChooseGender";
             this.ChooseGender.Size = new System.Drawing.Size(391, 45);
             this.ChooseGender.TabIndex = 12;
-            this.ChooseGender.Text = "Choose Your Gender";
             // 
             // Adding
             // 
@@ -214,6 +213,7 @@ namespace WinFormsApp1
             this.Deleting.TabIndex = 14;
             this.Deleting.Text = "Delete";
             this.Deleting.UseVisualStyleBackColor = true;
+            this.Deleting.Click += new System.EventHandler(this.Deleting_Click);
             // 
             // Updating
             // 
@@ -225,6 +225,7 @@ namespace WinFormsApp1
             this.Updating.TabIndex = 15;
             this.Updating.Text = "Update";
             this.Updating.UseVisualStyleBackColor = true;
+            this.Updating.Click += new System.EventHandler(this.Updating_Click);
             // 
             // Clearing
             // 
@@ -236,16 +237,18 @@ namespace WinFormsApp1
             this.Clearing.TabIndex = 16;
             this.Clearing.Text = "Clear";
             this.Clearing.UseVisualStyleBackColor = true;
+            this.Clearing.Click += new System.EventHandler(this.Clearing_Click);
             // 
-            // dataGridView1
+            // GridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(1077, 744);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 92;
-            this.dataGridView1.RowTemplate.Height = 45;
-            this.dataGridView1.Size = new System.Drawing.Size(1116, 243);
-            this.dataGridView1.TabIndex = 17;
+            this.GridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridView.Location = new System.Drawing.Point(1077, 744);
+            this.GridView.Name = "GridView";
+            this.GridView.RowHeadersWidth = 92;
+            this.GridView.RowTemplate.Height = 45;
+            this.GridView.Size = new System.Drawing.Size(1116, 243);
+            this.GridView.TabIndex = 17;
+            this.GridView.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GridView_RowHeaderMouseClick);
             // 
             // Searching
             // 
@@ -261,9 +264,9 @@ namespace WinFormsApp1
             // 
             this.ForSearching.Location = new System.Drawing.Point(790, 929);
             this.ForSearching.Name = "ForSearching";
+            this.ForSearching.PlaceholderText = "Enter Here";
             this.ForSearching.Size = new System.Drawing.Size(225, 43);
             this.ForSearching.TabIndex = 19;
-            this.ForSearching.Text = "Enter Here";
             // 
             // pictureBox1
             // 
@@ -274,6 +277,7 @@ namespace WinFormsApp1
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 20;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Contact
             // 
@@ -283,7 +287,7 @@ namespace WinFormsApp1
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.ForSearching);
             this.Controls.Add(this.Searching);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.GridView);
             this.Controls.Add(this.Clearing);
             this.Controls.Add(this.Updating);
             this.Controls.Add(this.Deleting);
@@ -304,8 +308,9 @@ namespace WinFormsApp1
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Contact";
             this.Text = "Da First APP";
+            this.Load += new System.EventHandler(this.Contact_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -331,7 +336,7 @@ namespace WinFormsApp1
         private System.Windows.Forms.Button Deleting;
         private System.Windows.Forms.Button Updating;
         private System.Windows.Forms.Button Clearing;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView GridView;
         private System.Windows.Forms.Label Searching;
         private System.Windows.Forms.TextBox ForSearching;
         private System.Windows.Forms.PictureBox pictureBox1;
