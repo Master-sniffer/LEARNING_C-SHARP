@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -145,6 +147,20 @@ namespace WinFormsApp1
         private void Clearing_Click(object sender, EventArgs e)
         {
             Clear();
+        }
+
+
+        static string myconnstring = ConfigurationManager.ConnectionStrings["connstring"].ConnectionString;
+
+        private void ForSearching_TextChanged(object sender, EventArgs e)
+        {
+            // Get the value from the text box
+            string words = ForSearching.Text;
+            SqlConnection conn = new SqlConnection(myconnstring);
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM Table_0 WHERE FirstName LIKE '%" + words + "%' OR Surname LIKE '%" + words + "%' OR ContactNumb LIKE '%" + words + "%' OR Address LIKE '%" + words + "%' ", conn);
+            DataTable DT = new DataTable();
+            sda.Fill(DT);
+            GridView.DataSource=DT;
         }
     }
 }

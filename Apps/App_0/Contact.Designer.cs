@@ -267,6 +267,7 @@ namespace WinFormsApp1
             this.ForSearching.PlaceholderText = "Enter Here";
             this.ForSearching.Size = new System.Drawing.Size(225, 43);
             this.ForSearching.TabIndex = 19;
+            this.ForSearching.TextChanged += new System.EventHandler(this.ForSearching_TextChanged);
             // 
             // pictureBox1
             // 
